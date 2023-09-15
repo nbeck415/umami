@@ -2,7 +2,7 @@
 version: '3'
 services:
   umami:
-    image: ghcr.io/umami-software/umami:postgresql-latest
+    build: .
     labels:
       shipyard.route: '/'
     ports:
