@@ -3,6 +3,8 @@ version: '3'
 services:
   umami:
     image: ghcr.io/umami-software/umami:postgresql-latest
+    labels:
+      shipyard.route: '/'
     ports:
       - "3000:3000"
     environment:
@@ -15,6 +17,8 @@ services:
     restart: always
   db:
     image: postgres:15-alpine
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: umami
       POSTGRES_USER: umami
